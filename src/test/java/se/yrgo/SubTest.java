@@ -6,13 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class SubTest {
     @Test
-    public void testThreadNotFound() throws SubTitleEmptyException {
+    public void testThreadNotFound() throws TitleEmptyException {
         Sub test = new Sub("Test");
         assertThrows(ThreadNotFoundException.class, () ->test.findThread("Should not exist"));
     }
     @Test
-    public void testSubNameNotEmpty() throws SubTitleEmptyException {
+    public void testSubNameNotEmpty() throws TitleEmptyException {
         Sub emptyTitle = new Sub("  ");
-        assertThrows(SubTitleEmptyException.class, emptyTitle::getTitle);
+        assertThrows(TitleEmptyException.class, emptyTitle::getTitle);
     }
 }
