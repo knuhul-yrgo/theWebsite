@@ -11,9 +11,9 @@ public class Sub {
     private List<Thread> threads = new ArrayList<>();
 
     // Below are constructors and getters that make sure the title isn't empty
-    public Sub(String title) throws SubTitleEmptyException{
+    public Sub(String title) throws TitleEmptyException {
         if (title.trim().equalsIgnoreCase("")) {
-            throw new SubTitleEmptyException();
+            throw new TitleEmptyException();
         }
         this.title = title;
     }
