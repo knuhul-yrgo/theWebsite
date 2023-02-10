@@ -1,22 +1,33 @@
 package se.yrgo;
 
+import java.util.Date;
 import java.util.regex.Pattern;
 
-// type (Guest, Member, Moderator), register date, country
+// Add properties for type (Guest, Member, Moderator), register date, country
+// Add toString()
 
 public class User {
     private String name;
     private String email;
+    private Date registerDate;
+    private  String country;
 
     public User(String name, String email) {
         this.name = name;
         this.email = email;
-        if (null == userName || "".equals(userName)) {
+        if (null == name || "".equals(name)) {
             throw new IllegalArgumentException("The name cannot be empty");
         }
-        if (!Pattern.matches(REGEX_EMAIL, email)) {
-            throw new IllegalArgumentException("Incorrect email format");
+        if(email != null && email.contains("@")) {
+            this.email = email;
+        }else {
+            throw new IllegalArgumentException("Missing @");
+        }
     }
+    public String toString() {
+        return "name "+ name + " email " + email;
+    }
+
 
     public String getName() {
         return name;
@@ -26,7 +37,15 @@ public class User {
         return email;
     }
 
-}
+    enum Type {
+        GUEST,
+        MEMBER,
+        MODERATOR
+    }
+
+    }
+
+
 
 
 
