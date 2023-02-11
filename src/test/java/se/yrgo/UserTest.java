@@ -26,8 +26,14 @@ public class UserTest {
     }
 
     @Test
+    void toStringTest() {
+        User testUser = new User("Eva", "eva@gmail.com");
+        assertEquals("Eva (eva@gmail.com)", "" + testUser);
+    }
+    @Test
     void createUserWithInvalidEmailTest() {
         User testUser;
         assertThrows(IllegalArgumentException.class, () -> new User("Ben", "benAtgamil.com"));
     }
+
 }
