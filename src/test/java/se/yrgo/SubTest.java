@@ -15,4 +15,5 @@ public class SubTest {
         Sub emptyTitle = new Sub("  ");
         assertThrows(TitleEmptyException.class, emptyTitle::getTitle);
     }
+
 }
