@@ -1,7 +1,7 @@
 package se.yrgo;
 
 import java.util.Date;
-import java.util.regex.Pattern;
+
 
 // Add properties for type (Guest, Member, Moderator), register date, country
 // Add toString()
