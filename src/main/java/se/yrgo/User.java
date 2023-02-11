@@ -1,10 +1,5 @@
 package se.yrgo;
-
 import java.util.Date;
-
-
-// Add properties for type (Guest, Member, Moderator), register date, country
-// Add toString()
 
 public class User {
     private String name;
@@ -28,7 +23,6 @@ public class User {
         return name + " (" + email + ")";
     }
 
-
     public String getName() {
         return name;
     }
@@ -37,13 +31,7 @@ public class User {
         return email;
     }
 
-    enum Type {
-        GUEST,
-        MEMBER,
-        MODERATOR
-    }
-
-    }
+}
 
 
 
