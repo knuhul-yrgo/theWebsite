@@ -1,12 +1,23 @@
 package se.yrgo;
 import java.util.Date;
 
+/**
+ * This class creates a new User and has methods to add name and email to it .
+ */
 public class User {
     private String name;
     private String email;
-    private Date registerDate;
-    private  String country;
 
+    /**
+     * Changes the name of this Student.
+     * This may involve a lengthy legal process.
+     * @param name This User's name.
+     *                Should include both first
+     *                and last name.
+     * @param email This is User's email.
+     *              Should include @
+     *
+     */
     public User(String name, String email) {
         this.name = name;
         this.email = email;
@@ -22,7 +33,10 @@ public class User {
     public String toString() {
         return name + " (" + email + ")";
     }
-
+    /**
+     * Gets the first and last name of this User.
+     * @return this User's name.
+     */
     public String getName() {
         return name;
     }
