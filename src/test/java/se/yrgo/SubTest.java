@@ -23,7 +23,7 @@ public class SubTest {
         User userTest = new User("TestUser", "test@gmail.com");
         Thread threadTest = new Thread("ThreadTest", userTest);
         subTest.addThread(threadTest);
-        assertEquals(1, subTest.numberOfThread());
+        assertEquals(1, subTest.getThreads().size());
     }
 
     @Test
