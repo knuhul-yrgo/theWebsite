@@ -114,7 +114,6 @@ public class Main {
         System.out.println("1 - List comments");
         System.out.println("2 - Add comment");
         System.out.println("3 - Ditch thread");
-        System.out.println("4 - Return");
         int choice = getIntFromKeyboard();
         switch (choice) {
             case 1:
@@ -125,9 +124,6 @@ public class Main {
                 break;
             case 3:
                 flgNoThread= true;
-                break;
-            case 4:
-                menuSubject();
                 break;
             default:
                 System.out.println("Don't know what to do...");
