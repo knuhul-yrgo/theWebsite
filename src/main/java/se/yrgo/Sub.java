@@ -11,9 +11,9 @@ public class Sub {
     private List<Thread> threads = new ArrayList<>();
 
     // Below are constructors and getters that make sure the title isn't empty
-    public Sub(String title) throws TitleEmptyException {
+    public Sub(String title) {
         if (title.trim().equalsIgnoreCase("")) {
-            throw new TitleEmptyException();
+            throw new IllegalArgumentException();
         }
         this.title = title;
     }
@@ -33,11 +33,15 @@ public class Sub {
     // Like the name says, it's a method that finds a specific thread, if it doesn't exist, throw ThreadNotFoundException
     public Thread findThread(String title) throws ThreadNotFoundException{
         title = title.trim();
-        for (int i = 0; i < threads.size(); i++) {
-            if (threads.get(i).getTitle().equalsIgnoreCase(title)){
-                return threads.get(i);
+        for (Thread thread : threads) {
+            if (thread.getTitle().equalsIgnoreCase(title)) {
+                return thread;
             }
         }
         throw new ThreadNotFoundException();
+    }
+
+    public int numberOfThread() {
+        return threads.size();
     }
 }
