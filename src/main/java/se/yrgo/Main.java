@@ -40,6 +40,11 @@ public class Main {
         }
         System.out.println("Good bye!");
     }
+
+    /**
+     * Prints the start-menu to either create a new user account, log in into an already existing one,
+     * or exit the program.
+     */
     public static void menuStart(){
         System.out.println("\nWelcome! What do you want to do?");
         System.out.println("1 - Sign up");
@@ -62,6 +67,10 @@ public class Main {
         }
 
     }
+
+    /**
+     * Once you log in you come to the subjects-menu.
+     */
     public static void menuSubject(){
         System.out.println("\n" + loggedInUser + ",what do you want to do?");
         System.out.println("1 - List subjects");
@@ -86,6 +95,10 @@ public class Main {
         }
     }
 
+    /**
+     * When you enter a subject-board you can either list the existing threads, add a new discussion-thread,
+     * choose one of the existing discussions, or ditch (leave) the subject board.
+     */
     public static void menuThread(){
         System.out.println("\n" + loggedInUser + ",what do you want to do with " + currentSub.getTitle() + "?");
         System.out.println("1 - List threads");
@@ -109,6 +122,10 @@ public class Main {
                 System.out.println("Don't know what to do...");
         }
     }
+
+    /**
+     * If you enter a discussion-thread you can list or post comments to the discussion.
+     */
     public static void menuComment(){
         System.out.println("\n" + loggedInUser + ",what do you want to do with " + currentThread.getTitle() + " in " + currentSub.getTitle() + "?");
         System.out.println("1 - List comments");
@@ -129,6 +146,12 @@ public class Main {
                 System.out.println("Don't know what to do...");
         }
     }
+
+    /**
+     * As all the UI-menu's have choices listed in integers, the user gets to choose what to do by typing an integer.
+     * This method reads the integer the user types in.
+     * @return user choice
+     */
     public static int getIntFromKeyboard(){
         int choice = 0;
         boolean done = false;
@@ -145,6 +168,10 @@ public class Main {
         }
         return(choice);
     }
+
+    /**
+     * Calls the User-constructor
+     */
     public static void signUpUser(){
         System.out.println("User name?");
         String name = keyboard.nextLine();
@@ -154,6 +181,10 @@ public class Main {
         users.add(newUser);
     }
 
+    /**
+     * Compares name with list of signed up users
+     * Logs in the user with corresponding name
+     */
     public static void logInUser(){
         System.out.println("User name?");
         String name = keyboard.nextLine();
@@ -165,6 +196,10 @@ public class Main {
         }
 
     }
+
+    /**
+     * Prints the titles of the subs from the sub-list
+     */
     public static void listSubs(){
         System.out.println("\nAvailable subjects:");
         for (Sub sub:subs){
@@ -201,6 +236,12 @@ public class Main {
             System.out.println("-----------------------");
         }
     }
+
+    public static void addThreadToSub(){
+        String threadTitle = keyboard.nextLine();
+
+    }
+
     public static void addThread(){
         System.out.println("Thread title?");
         String threadTitle = keyboard.nextLine();
