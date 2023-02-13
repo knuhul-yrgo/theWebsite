@@ -206,6 +206,10 @@ public class Main {
             System.out.println(sub.getTitle());
         }
     }
+
+    /**
+     * Method that takes a string from the user and adds it as a new subject
+     */
     public static void addSub(){
         System.out.println("Subject title?");
         String subTitle = keyboard.nextLine();
@@ -217,6 +221,10 @@ public class Main {
 
         }
     }
+
+    /**
+     * Method to pick which subject the user which to write or read in
+     */
     public static void chooseSub(){
         System.out.println("Choose subject?");
         String subject = keyboard.nextLine();
@@ -228,6 +236,9 @@ public class Main {
         }
     }
 
+    /**
+     * Lists all threads in the chosen subject
+     */
     public static void listThreads(){
         List<Thread> threads = currentSub.getThreads();
         System.out.println("\nThreads in " + currentSub.getTitle() + ":");
@@ -237,9 +248,12 @@ public class Main {
         }
     }
 
+    /**
+     * Adds a thread to the chosen sub
+     */
+
     public static void addThreadToSub(){
         String threadTitle = keyboard.nextLine();
-
     }
 
     public static void addThread(){
@@ -255,8 +269,11 @@ public class Main {
         catch (Exception exp) {
             // todo: handle exception
         }
-
     }
+
+    /**
+     * Chose a specific thread from the current subject
+     */
     public static void chooseThread(){
         System.out.println("Choose thread?");
         String wantedThread = keyboard.nextLine();
@@ -268,6 +285,10 @@ public class Main {
             // todo: handle exception
         }
     }
+
+    /**
+     * List all the comments in the current thread
+     */
     public static void listComments(){
         List<String> comments = currentThread.getComments();
         System.out.println("\nComments in " + currentThread.getTitle() + ":");
@@ -276,6 +297,10 @@ public class Main {
             System.out.println("-----------------------");
         }
     }
+
+    /**
+     * Add comment to the current thread
+     */
     public static void addComment(){
         System.out.println("Comment?");
         String newComment = keyboard.nextLine();
