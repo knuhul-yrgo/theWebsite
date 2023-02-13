@@ -9,11 +9,12 @@ public class User {
     private String email;
 
     /**
-     * Changes the name of this Student.
-     * This may involve a lengthy legal process.
+     * Constructor of User.
+     * User must have name and email and can handle the exception.
+     *
      * @param name This User's name.
-     *                Should include both first
-     *                and last name.
+     *             Should include both first
+     *             and last name.
      * @param email This is User's email.
      *              Should include @
      *
@@ -40,7 +41,10 @@ public class User {
     public String getName() {
         return name;
     }
-
+    /**
+     * Gets the email of this User.
+     * @return this User's email.
+     */
     public String getEmail() {
         return email;
     }
